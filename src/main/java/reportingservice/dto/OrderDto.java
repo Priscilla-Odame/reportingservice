@@ -27,6 +27,10 @@ public class OrderDto {
         return id;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -55,13 +59,13 @@ public class OrderDto {
         this.price = price;
     }
 
-//    public Side getSide() {
-//        return side;
-//    }
-//
-//    public void setSide(Side side) {
-//        this.side = side;
-//    }
+    public Side getSide() {
+        return side;
+    }
+
+    public void setSide(Side side) {
+        this.side = side;
+    }
 //
 //    public static OrderDto fromModel(Order order) {
 //        OrderDto orderDto = new OrderDto();
