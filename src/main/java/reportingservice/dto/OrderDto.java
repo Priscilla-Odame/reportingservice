@@ -66,18 +66,7 @@ public class OrderDto {
     public void setSide(Side side) {
         this.side = side;
     }
-//
-//    public static OrderDto fromModel(Order order) {
-//        OrderDto orderDto = new OrderDto();
-//
-//        orderDto.setId(order.getId());
-//        orderDto.setPrice(order.getPrice());
-//        orderDto.setQuantity(order.getQuantity());
-//        orderDto.setProduct(order.getProduct());
-//        orderDto.setSide(order.getSide());
-//
-//        return orderDto;
-//    }
+
 
 
 }
