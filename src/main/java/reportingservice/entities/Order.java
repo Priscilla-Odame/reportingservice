@@ -86,20 +86,4 @@ public class Order {
         this.side = side;
         this.status = status;
     }
-    //    public Portfolio getPortfolio() {
-//        return portfolio;
-//    }
-//
-//    public void setPortfolio(Portfolio portfolio) {
-//        this.portfolio = portfolio;
-//    }
-//
-//    public static Order fromDto(OrderDto orderDto) {
-//        Order order = new Order();
-//        order.setProduct(orderDto.getProduct());
-////        order.setPortfolio(orderDto.getPortfolio());
-//        order.setPrice(orderDto.getPrice());
-//
-//        return order;
-//    }
 }

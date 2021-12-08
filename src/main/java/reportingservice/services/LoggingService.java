@@ -15,7 +15,20 @@ public class LoggingService {
     OrderRepository orderRepository;
 
     public void logOrder(OrderDto orderdto) {
+        Optional<Order> order = orderRepository.findById(orderdto.getId());
+        Order newOrder = new Order();
 
+        newOrder.setId(orderdto.getId());
+        newOrder.setPrice(orderdto.getPrice());
+        newOrder.setProduct(orderdto.getProduct());
+        newOrder.setQuantity(orderdto.getQuantity());
+        newOrder.setSide(orderdto.getSide());
+        newOrder.setStatus(orderdto.getStatus());
+        orderRepository.save(newOrder);
+
+    }
+
+    public void updateOrder(OrderDto orderdto, String id) {
         Optional<Order> order = orderRepository.findById(orderdto.getId());
 
         if (order.isPresent()){
