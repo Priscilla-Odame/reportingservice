@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reportingservice.dto.OrderDto;
 import reportingservice.entities.Order;
+import reportingservice.enums.Status;
 import reportingservice.repositories.OrderRepository;
 
 import java.util.Optional;
@@ -15,7 +16,20 @@ public class LoggingService {
     OrderRepository orderRepository;
 
     public void logOrder(OrderDto orderdto) {
+        Optional<Order> order = orderRepository.findById(orderdto.getId());
+        Order newOrder = new Order();
 
+        newOrder.setId(orderdto.getId());
+        newOrder.setPrice(orderdto.getPrice());
+        newOrder.setProduct(orderdto.getProduct());
+        newOrder.setQuantity(orderdto.getQuantity());
+        newOrder.setSide(orderdto.getSide());
+        newOrder.setStatus(orderdto.getStatus());
+        orderRepository.save(newOrder);
+
+    }
+
+    public void updateOrder(OrderDto orderdto, String id) {
         Optional<Order> order = orderRepository.findById(orderdto.getId());
 
         if (order.isPresent()){
@@ -37,5 +51,11 @@ public class LoggingService {
             newOrder.setStatus(orderdto.getStatus());
             orderRepository.save(newOrder);
         }
+    }
+
+    public void changeOrderToCancelled(String id) {
+        Optional<Order> order = orderRepository.findById(id);
+        order.get().setStatus(Status.CANCELLED);
+        orderRepository.save(order.get());
     }
 }

@@ -26,6 +26,10 @@ public class Order {
 //    @ManyToOne
 //    private Portfolio portfolio;
 
+
+    public Order() {
+    }
+
     public String getId() {
         return id;
     }
@@ -74,20 +78,12 @@ public class Order {
         this.status = status;
     }
 
-//    public Portfolio getPortfolio() {
-//        return portfolio;
-//    }
-//
-//    public void setPortfolio(Portfolio portfolio) {
-//        this.portfolio = portfolio;
-//    }
-//
-//    public static Order fromDto(OrderDto orderDto) {
-//        Order order = new Order();
-//        order.setProduct(orderDto.getProduct());
-////        order.setPortfolio(orderDto.getPortfolio());
-//        order.setPrice(orderDto.getPrice());
-//
-//        return order;
-//    }
+    public Order(String id, String product, int quantity, Double price, Side side, Status status) {
+        this.id = id;
+        this.product = product;
+        this.quantity = quantity;
+        this.price = price;
+        this.side = side;
+        this.status = status;
+    }
 }

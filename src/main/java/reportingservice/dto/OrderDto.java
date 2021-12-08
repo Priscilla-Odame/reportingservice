@@ -22,6 +22,17 @@ public class OrderDto {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    public OrderDto(String id, String product, int quantity, Double price, Side side, Status status) {
+        this.id = id;
+        this.product = product;
+        this.quantity = quantity;
+        this.price = price;
+        this.side = side;
+        this.status = status;
+    }
+
+    public OrderDto() {
+    }
 
     public String getId() {
         return id;
