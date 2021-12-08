@@ -19,6 +19,10 @@ public class LoggingController {
     @PutMapping(value="/logorder/{id}")
     public void updateOrder(@RequestBody OrderDto orderDto, @PathVariable String id){
         loggingService.updateOrder(orderDto, id);
+    }
 
+    @PutMapping(value="order/delete/{id}")
+    public void changeOrderToCancelled(@PathVariable String id){
+        loggingService.changeOrderToCancelled(id);
     }
 }
