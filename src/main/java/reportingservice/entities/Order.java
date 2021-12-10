@@ -23,9 +23,6 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-//    @ManyToOne
-//    private Portfolio portfolio;
-
 
     public Order() {
     }

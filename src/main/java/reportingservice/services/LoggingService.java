@@ -14,7 +14,6 @@ public class LoggingService {
 
     @Autowired
     OrderRepository orderRepository;
-
     public void logOrder(OrderDto orderdto) {
         Optional<Order> order = orderRepository.findById(orderdto.getId());
         Order newOrder = new Order();
